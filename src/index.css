@@ -12,3 +12,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.nav-item {
+  padding: 0 20px;
+  background: teal;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tab img {
+  max-width: 300px;
+}

@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 
 class Tabs extends Component {
   state = {
-    currentTabIndex: 1
+    currentTabIndex: 0
   }
 
   render() {
     const { currentTabIndex } = this.state;
-    const childrenArray = React.Children.toArray(this.props.children);
+    const tabsOnTop = React.Children.toArray(this.props.children)[0].type === TabButtons
+    const childrenArray = React.Children.toArray(this.props.children).filter(x => x.type === TabsPane);
     const nav = <nav>
       {childrenArray.map((child, index) => {
         return (
@@ -17,7 +18,6 @@ class Tabs extends Component {
         )
       })}
     </nav>;
-    const tabsOnTop = childrenArray[0].type === TabButtons
 
     return (
       <div>
